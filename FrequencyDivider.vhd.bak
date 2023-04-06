@@ -1,0 +1,35 @@
+LIBRARY ieee;
+USE IEEE.math_real.ALL;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
+
+ENTITY FrequencyDivider IS
+    GENERIC (
+        MULTIPLY_BY : INTEGER := 1;
+        DIVIDE_BY : INTEGER := 1
+    );
+    PORT (
+        clk_in : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        clk_out : OUT STD_LOGIC
+    );
+END ENTITY FrequencyDivider;
+
+ARCHITECTURE arch OF FrequencyDivider IS
+    SIGNAL counter : INTEGER RANGE 0 TO integer(DIVIDE_BY / MULTIPLY_BY) := 0;
+BEGIN
+    PROCESS (clk_in, reset)
+    BEGIN
+        IF reset = '1' THEN
+            counter <= 0;
+            clk_out <= '0';
+        ELSIF rising_edge(clk_in) THEN
+            IF counter = 3333333 THEN
+                counter <= 0;
+                clk_out <= NOT clk_out;
+            ELSE
+                counter <= counter + 1;
+            END IF;
+        END IF;
+    END PROCESS;
+END ARCHITECTURE arch;

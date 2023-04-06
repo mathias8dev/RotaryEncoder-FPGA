@@ -1,0 +1,72 @@
+LIBRARY ieee;
+USE IEEE.math_real.ALL;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
+
+ENTITY SynRotaryEncoder IS
+    PORT (
+        AR : IN STD_LOGIC;
+        CLK : IN STD_LOGIC;
+        RE_CLK : IN STD_LOGIC;
+        DT : IN STD_LOGIC;
+        SW : IN STD_LOGIC;
+        DIR : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
+        SW_PRESSED : OUT STD_LOGIC);
+END SynRotaryEncoder;
+
+ARCHITECTURE Arch OF SynRotaryEncoder IS
+    SIGNAL noiseless_re_clk : STD_LOGIC;
+    SIGNAL noiseless_dt : STD_LOGIC;
+    SIGNAL noiseless_sw : STD_LOGIC;
+
+    COMPONENT DFlipFlop IS
+        PORT (
+            AR : IN STD_LOGIC;
+            CLK : IN STD_LOGIC;
+            D : IN STD_LOGIC;
+            Q : OUT STD_LOGIC);
+    END COMPONENT DFlipFlop;
+BEGIN
+
+    PROCESS (AR, CLK)
+    BEGIN
+        IF AR = '1' THEN
+            DIR <= "00";
+        ELSIF CLK = '1' THEN
+            IF noiseless_re_clk = '1' THEN
+                IF noiseless_dt = '1' THEN
+                    DIR <= "10"; -- Rotation gauche
+                ELSE
+                    DIR <= "01"; -- Rotation droite
+                END IF;
+            ELSE
+                DIR <= "00";
+            END IF;
+        END IF;
+    END PROCESS;
+
+    SW_PRESSED <= NOT noiseless_sw;
+    ----------------------------------------------
+    ----- components
+    ----------------------------------------------
+    RO_CLK_cleaned : DFlipFlop PORT MAP(
+        AR => AR,
+        CLK => RE_CLK,
+        D => SW,
+        Q => noiseless_re_clk
+    );
+
+    DT_cleaned : DFlipFlop PORT MAP(
+        AR => AR,
+        CLK => CLK,
+        D => DT,
+        Q => noiseless_dt
+    );
+
+    SW_cleaned : DFlipFlop PORT MAP(
+        AR => AR,
+        CLK => CLK,
+        D => SW,
+        Q => noiseless_sw
+    );
+END Arch;

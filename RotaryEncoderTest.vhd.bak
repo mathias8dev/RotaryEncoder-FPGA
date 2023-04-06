@@ -1,0 +1,64 @@
+LIBRARY ieee;
+USE IEEE.std_logic_1164.ALL;
+
+ENTITY RotaryEncoderTest IS PORT (
+    AR : IN STD_LOGIC;
+    CLK : IN STD_LOGIC;
+    RE_CLK : IN STD_LOGIC;
+    DT : IN STD_LOGIC;
+    SW : IN STD_LOGIC;
+    DIR : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
+    SW_PRESSED : OUT STD_LOGIC
+);
+
+END RotaryEncoderTest;
+
+ARCHITECTURE arch OF RotaryEncoderTest IS
+    SIGNAL int_ar : STD_LOGIC;
+    SIGNAL pll_locked : STD_LOGIC;
+    SIGNAL pll_out : STD_LOGIC;
+
+    --------------------------------------------------
+    --- component
+    ------------------------------------------------
+    COMPONENT SynRotaryEncoder IS PORT (
+        AR : IN STD_LOGIC;
+        CLK : IN STD_LOGIC;
+        RE_CLK : IN STD_LOGIC;
+        DT : IN STD_LOGIC;
+        SW : IN STD_LOGIC;
+        DIR : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
+        SW_PRESSED : OUT STD_LOGIC);
+    END COMPONENT;
+
+    COMPONENT Pll IS PORT (
+        areset : IN STD_LOGIC := '0';
+        inclk0 : IN STD_LOGIC := '0';
+        c0 : OUT STD_LOGIC;
+        locked : OUT STD_LOGIC
+        );
+    END COMPONENT;
+BEGIN
+
+    int_ar <= AR OR NOT pll_locked;
+
+    -----------------------------------------------------
+    ---- component_inst
+    ------------------------------------------
+    Pll_inst : Pll PORT MAP(
+        areset => AR,
+        inclk0 => CLK,
+        c0 => pll_out,
+        locked => pll_locked
+    );
+
+    SynRotaryEncoder_inst : SynRotaryEncoder PORT MAP(
+        AR => int_ar,
+        clk => pll_out,
+        RE_CLK => RE_CLK,
+        DT => DT,
+        SW => SW,
+        DIR => DIR,
+        SW_PRESSED => SW_PRESSED
+    );
+END ARCHITECTURE arch;

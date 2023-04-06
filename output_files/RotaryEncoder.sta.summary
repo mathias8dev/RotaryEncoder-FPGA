@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'DFlipFlop:RO_CLK_cleaned|Q'
+Slack : -1.628
+TNS   : -3.093
+
+Type  : Slow 1200mV 85C Model Setup 'CLK'
+Slack : -0.272
+TNS   : -0.529
+
+Type  : Slow 1200mV 85C Model Hold 'CLK'
+Slack : 0.550
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'DFlipFlop:RO_CLK_cleaned|Q'
+Slack : 0.776
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -8.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DFlipFlop:RO_CLK_cleaned|Q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Slow 1200mV 0C Model Setup 'DFlipFlop:RO_CLK_cleaned|Q'
+Slack : -1.483
+TNS   : -2.814
+
+Type  : Slow 1200mV 0C Model Setup 'CLK'
+Slack : -0.160
+TNS   : -0.310
+
+Type  : Slow 1200mV 0C Model Hold 'CLK'
+Slack : 0.507
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'DFlipFlop:RO_CLK_cleaned|Q'
+Slack : 0.707
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -8.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DFlipFlop:RO_CLK_cleaned|Q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Fast 1200mV 0C Model Setup 'DFlipFlop:RO_CLK_cleaned|Q'
+Slack : -0.379
+TNS   : -0.681
+
+Type  : Fast 1200mV 0C Model Setup 'CLK'
+Slack : 0.116
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'DFlipFlop:RO_CLK_cleaned|Q'
+Slack : 0.303
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK'
+Slack : 0.510
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -7.132
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DFlipFlop:RO_CLK_cleaned|Q'
+Slack : -1.000
+TNS   : -2.000
+
+------------------------------------------------------------

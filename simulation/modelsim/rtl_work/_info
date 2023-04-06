@@ -1,0 +1,191 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/pret/Documents/Code/Electronics/RotaryEncoder/simulation/modelsim
+Edflipflop
+Z1 w1680677783
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z5 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+!i122 2
+R0
+Z6 8C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/DFlipFlop.vhd
+Z7 FC:/Users/pret/Documents/Code/Electronics/RotaryEncoder/DFlipFlop.vhd
+l0
+L6 1
+VJobM`zkBLXP@3b@=4^b^02
+!s100 ddRNSOR_o:n>jUcc<LI;c1
+Z8 OV;C;2020.1;71
+31
+Z9 !s110 1680776533
+!i10b 1
+Z10 !s108 1680776533.000000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/DFlipFlop.vhd|
+Z12 !s107 C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/DFlipFlop.vhd|
+!i113 1
+Z13 o-93 -work work
+Z14 tExplicit 1 CvgOpt 0
+Aarch
+R2
+R3
+R4
+R5
+DEx4 work 9 dflipflop 0 22 JobM`zkBLXP@3b@=4^b^02
+!i122 2
+l16
+L14 13
+VfgGj9XDfNz?aH[F>aeDW60
+!s100 LPAjdOi?Wm=G_;c97JD[Y3
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Erotaryencodercounter
+Z15 w1680774361
+R2
+R3
+R4
+R5
+!i122 1
+R0
+Z16 8C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/RotaryEncoderCounter.vhd
+Z17 FC:/Users/pret/Documents/Code/Electronics/RotaryEncoder/RotaryEncoderCounter.vhd
+l0
+L6 1
+V@I?XI7W]7TRRGLMJmicej2
+!s100 HbS?M@MC67z2CBgeW]cQE2
+R8
+31
+R9
+!i10b 1
+R10
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/RotaryEncoderCounter.vhd|
+Z19 !s107 C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/RotaryEncoderCounter.vhd|
+!i113 1
+R13
+R14
+Aarch
+R2
+R3
+R4
+R5
+DEx4 work 20 rotaryencodercounter 0 22 @I?XI7W]7TRRGLMJmicej2
+!i122 1
+l21
+L19 44
+VUGJabElDFWfcCo3nEoYQ93
+!s100 `iIN7;^IfbAA0Dc43P7AM2
+R8
+31
+R9
+!i10b 1
+R10
+R18
+R19
+!i113 1
+R13
+R14
+Esynrotaryencodercounter
+Z20 w1680776410
+R2
+R3
+R4
+R5
+!i122 0
+R0
+Z21 8C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/SynRotaryEncoderCounter.vhd
+Z22 FC:/Users/pret/Documents/Code/Electronics/RotaryEncoder/SynRotaryEncoderCounter.vhd
+l0
+L6 1
+V<mcVzmGj>APJfdTc^zO7<2
+!s100 ]JjfXYLDHR]T:kD>TFKbj3
+R8
+31
+R9
+!i10b 1
+R10
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/SynRotaryEncoderCounter.vhd|
+Z24 !s107 C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/SynRotaryEncoderCounter.vhd|
+!i113 1
+R13
+R14
+Aarch
+R2
+R3
+R4
+R5
+DEx4 work 23 synrotaryencodercounter 0 22 <mcVzmGj>APJfdTc^zO7<2
+!i122 0
+l43
+L19 71
+V8j`^UlfUS9_efzW:9NMjj3
+!s100 nb:]Yh?4O2VQ0al]IEUCf0
+R8
+31
+R9
+!i10b 1
+R10
+R23
+R24
+!i113 1
+R13
+R14
+Esynrotaryencodercounter_tb
+Z25 w1680776295
+R2
+R5
+R3
+R4
+!i122 3
+R0
+Z26 8C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/simulation/modelsim/SynRotaryEncoderCounter_tb.vhd
+Z27 FC:/Users/pret/Documents/Code/Electronics/RotaryEncoder/simulation/modelsim/SynRotaryEncoderCounter_tb.vhd
+l0
+L6 1
+V26i45Y9zoP_k2[98[@`G31
+!s100 ^VR9b70g@Cn68HJj@Em3H1
+R8
+32
+Z28 !s110 1680776541
+!i10b 1
+Z29 !s108 1680776541.000000
+Z30 !s90 -reportprogress|300|-work|work|C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/simulation/modelsim/SynRotaryEncoderCounter_tb.vhd|
+!s107 C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/simulation/modelsim/SynRotaryEncoderCounter_tb.vhd|
+!i113 1
+Z31 o-work work
+R14
+Aarch
+R2
+R5
+R3
+R4
+DEx4 work 26 synrotaryencodercounter_tb 0 22 26i45Y9zoP_k2[98[@`G31
+!i122 3
+l30
+L9 80
+Vco:hUCP9bzJBQeWKYj0K=1
+!s100 J5f=j1NYN7JgZ1HGLOOFI2
+R8
+32
+R28
+!i10b 1
+R29
+R30
+Z32 !s107 C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/simulation/modelsim/SynRotaryEncoderCounter_tb.vhd|
+!i113 1
+R31
+R14

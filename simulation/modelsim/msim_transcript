@@ -1,0 +1,80 @@
+# Reading pref.tcl
+# ERROR: No extended dataflow license exists
+# do RotaryEncoder_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/SynRotaryEncoderCounter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:22:13 on Apr 06,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/SynRotaryEncoderCounter.vhd 
+# -- Loading package STANDARD
+# -- Loading package MATH_REAL
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity SynRotaryEncoderCounter
+# -- Compiling architecture Arch of SynRotaryEncoderCounter
+# End time: 12:22:13 on Apr 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/RotaryEncoderCounter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:22:13 on Apr 06,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/RotaryEncoderCounter.vhd 
+# -- Loading package STANDARD
+# -- Loading package MATH_REAL
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RotaryEncoderCounter
+# -- Compiling architecture Arch of RotaryEncoderCounter
+# End time: 12:22:13 on Apr 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/DFlipFlop.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:22:13 on Apr 06,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/DFlipFlop.vhd 
+# -- Loading package STANDARD
+# -- Loading package MATH_REAL
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity DFlipFlop
+# -- Compiling architecture Arch of DFlipFlop
+# End time: 12:22:13 on Apr 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+do SynRotaryEncoderCounter_tb.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:22:21 on Apr 06,2023
+# vcom -reportprogress 300 -work work C:/Users/pret/Documents/Code/Electronics/RotaryEncoder/simulation/modelsim/SynRotaryEncoderCounter_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package MATH_REAL
+# -- Loading package NUMERIC_STD
+# -- Compiling entity SynRotaryEncoderCounter_tb
+# -- Compiling architecture arch of SynRotaryEncoderCounter_tb
+# End time: 12:22:21 on Apr 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -gui -l msim_transcript work.SynRotaryEncoderCounter_tb 
+# Start time: 12:22:21 on Apr 06,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.math_real(body)
+# Loading ieee.numeric_std(body)
+# Loading work.synrotaryencodercounter_tb(arch)
+# Loading work.synrotaryencodercounter(arch)
+# Loading work.dflipflop(arch)
+# Loading work.rotaryencodercounter(arch)
+run 1ms
+# End time: 12:24:49 on Apr 06,2023, Elapsed time: 0:02:28
+# Errors: 0, Warnings: 0

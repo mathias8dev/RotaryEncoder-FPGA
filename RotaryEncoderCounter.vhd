@@ -1,0 +1,62 @@
+LIBRARY ieee;
+USE IEEE.math_real.ALL;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
+
+ENTITY RotaryEncoderCounter IS
+    GENERIC (
+        MAX : INTEGER := 4;
+        BORNED : STD_LOGIC := '1');
+    PORT (
+        AR : IN STD_LOGIC;
+        CLK : IN STD_LOGIC;
+        DT : IN STD_LOGIC;
+        SW : IN STD_LOGIC;
+        Q : OUT STD_LOGIC_VECTOR(INTEGER(ceil(log2(real(MAX)))) - 1 DOWNTO 0);
+        SW_PRESSED : OUT STD_LOGIC);
+END RotaryEncoderCounter;
+
+ARCHITECTURE Arch OF RotaryEncoderCounter IS
+    SIGNAL counter : INTEGER RANGE 0 TO MAX - 1 := 0;
+BEGIN
+
+    PROCESS (AR, CLK)
+    BEGIN
+        IF AR = '1' THEN
+            counter <= 0;
+        ELSIF falling_edge(CLK) THEN
+            IF (DT = '1') THEN -- Rotation dans le sens des aiguilles d'une montre
+                IF BORNED = '1' THEN
+                    IF counter < MAX - 1 THEN
+                        counter <= counter + 1;
+                    END IF;
+
+                ELSIF BORNED = '0' THEN
+                    IF counter = MAX - 1 THEN
+                        counter <= 0;
+                    ELSE
+                        counter <= counter + 1;
+                    END IF;
+                END IF;
+            ELSIF (DT = '0') THEN -- Rotation dans le sens contraire des aiguilles d'une montre
+                IF BORNED = '1' THEN
+                    IF counter > 0 THEN
+                        counter <= counter - 1;
+                    END IF;
+
+                ELSIF BORNED = '0' THEN
+                    IF counter = 0 THEN
+                        counter <= MAX - 1;
+                    ELSE
+                        counter <= counter - 1;
+                    END IF;
+                END IF;
+            END IF;
+
+        END IF;
+    END PROCESS;
+
+    Q <= STD_LOGIC_VECTOR(to_unsigned(counter, Q'length));
+    SW_PRESSED <= NOT SW;
+
+END Arch;

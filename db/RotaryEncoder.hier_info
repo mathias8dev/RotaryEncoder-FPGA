@@ -1,0 +1,51 @@
+|SynRotaryEncoderCounter
+AR => DFlipFlop:RO_CLK_cleaned.AR
+AR => DFlipFlop:DT_cleaned.AR
+AR => DFlipFlop:SW_cleaned.AR
+AR => RotaryEncoderCounter:RotaryEncoderCounter_inst.AR
+CLK => DFlipFlop:RO_CLK_cleaned.CLK
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => DFlipFlop:DT_cleaned.CLK
+CLK => DFlipFlop:SW_cleaned.CLK
+RE_CLK => DFlipFlop:RO_CLK_cleaned.D
+DT => DFlipFlop:DT_cleaned.D
+SW => DFlipFlop:SW_cleaned.D
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SynRotaryEncoderCounter|DFlipFlop:RO_CLK_cleaned
+AR => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SynRotaryEncoderCounter|DFlipFlop:DT_cleaned
+AR => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SynRotaryEncoderCounter|DFlipFlop:SW_cleaned
+AR => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SynRotaryEncoderCounter|RotaryEncoderCounter:RotaryEncoderCounter_inst
+AR => counter[0].ACLR
+AR => counter[1].ACLR
+CLK => counter[0].CLK
+CLK => counter[1].CLK
+DT => counter.OUTPUTSELECT
+DT => counter.OUTPUTSELECT
+SW => SW_PRESSED.DATAIN
+Q[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+SW_PRESSED <= SW.DB_MAX_OUTPUT_PORT_TYPE
+
+
